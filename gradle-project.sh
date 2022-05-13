@@ -16,10 +16,15 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.2'
-    testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
-    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'org.easytesting:fest-assert:1.4'
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+}
+
+test {
+    useJUnitPlatform()
 }
 " > $PROJECT_NAME/build.gradle
 
